@@ -1,0 +1,7 @@
+{
+    "env" : {
+        "MONGO_USER":"admin",
+        "MONGO_PASSWORD" :"rt9F0l6sJpJmhevo",
+        "MONGO_DB":"library-management-dev"
+    }
+}
