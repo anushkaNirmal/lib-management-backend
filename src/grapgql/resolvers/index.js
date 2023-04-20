@@ -1,9 +1,15 @@
-const userResolvers = require('./user')
-const bookResolvers = require('./book')
+const { users, createUser } = require("./user");
+const { books, createBook } = require("./book");
 
 const rooteResolver = {
-    ...userResolvers,
-    ...bookResolvers
-}
+    Query: {
+        books,
+        users,
+    },
+    Mutation: {
+        createBook,
+        createUser
+    }
+};
 
-module.exports = rooteResolver
+module.exports = rooteResolver;

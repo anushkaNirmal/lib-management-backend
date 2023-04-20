@@ -1,15 +1,14 @@
-const Book = require("../models/book");
-
+const Book = require('../models/book')
 
 exports.getAll = async () => {
     try {
         const books = await Book.find();
-        return books
+        return books;
     } catch (error) {
         console.log("get all book service error : ", error);
         throw new Error(error);
     }
-}
+};
 exports.create = async (args) => {
     try {
         const book = new Book({
