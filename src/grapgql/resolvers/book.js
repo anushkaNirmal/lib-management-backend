@@ -14,7 +14,6 @@ exports.books = async () => {
 };
 
 exports.createBook = async (parent , args) => {
-    console.log(args , "args")
     try {
         const result = await bookService.create(args);
         return { ...result._doc, _id: result.id };
