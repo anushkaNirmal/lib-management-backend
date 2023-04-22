@@ -1,6 +1,7 @@
 const BookType = `
     type Book {
         _id:ID!
+        bookId:String!
         title:String!
         author:String!
         isbn:String!

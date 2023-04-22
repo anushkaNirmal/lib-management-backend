@@ -13,6 +13,7 @@ exports.create = async (args) => {
     try {
         const book = new Book({
             title: args.bookInput.title,
+            bookId:args.bookInput.bookId,
             author: args.bookInput.author,
             isbn: args.bookInput.isbn,
             publisher: args.bookInput.publisher,

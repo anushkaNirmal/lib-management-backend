@@ -15,12 +15,15 @@ const typeDefs = gql`
         users: [User!]!
         books: [Book!]!
         sequenceNos: [SequenceNo!]!
+        getSequenceNoByYear(year:Int!) : SequenceNo
+        getSequenceNoById(id: ID!) : SequenceNo
     }
 
     type Mutation {
         createUser(userInput: UserInput!): User
         createBook(bookInput: BookInput!): Book
         createSequenceNo(sequenceInput: SequenceInput!): SequenceNo
+        updateSequenceNo(id:ID! , sequenceInput: SequenceInput!) : SequenceNo
     }
 `;
 
