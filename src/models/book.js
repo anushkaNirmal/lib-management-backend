@@ -37,17 +37,25 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    availabiluty: {
+    availability: {
         type: Boolean,
+        required: false,
+        default:true,
     },
     borrowedDate: {
         type: String,
+        required: false,
+        default:null,
     },
     borrowedUser: {
         type: String,
+        required: false,
+        default:null,
     },
     shouldReturnIn: {
         type: String,
+        required: false,
+        default:null,
     },
 });
 

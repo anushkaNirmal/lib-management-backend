@@ -10,6 +10,10 @@ const BookType = `
         genre:String!
         language:String!
         synopsis:String!
+        availability:Boolean
+        borrowedDate:String
+        borrowedUser:String
+        shouldReturnIn:String
     }
 `;
 
@@ -40,9 +44,9 @@ module.exports = { BookType, BookInputType };
 //         genre:String!
 //         language:String!
 //         synopsis:String!
-//         availabiluty:Boolean!
-//         borrowedDate:String!
-//         borrowedUser:String!
-//         shouldReturnIn:String!
+        // availabiluty:Boolean!
+        // borrowedDate:String!
+        // borrowedUser:String!
+        // shouldReturnIn:String!
 //     }
 // `;
