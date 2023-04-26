@@ -1,4 +1,4 @@
-const SequenceNo = require("../models/sequence_no");
+const SequenceNo = require("@src/models/sequence_no");
 
 exports.getAll = async () => {
     try {

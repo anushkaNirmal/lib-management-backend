@@ -1,4 +1,4 @@
-const Book = require('../models/book')
+const Book = require('@src/models/book')
 
 exports.getAll = async () => {
     try {

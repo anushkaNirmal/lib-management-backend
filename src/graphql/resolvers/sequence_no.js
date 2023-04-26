@@ -1,4 +1,4 @@
-const sequenceNoService = require("../../services/sequence_no");
+const sequenceNoService = require("@src/services/sequence_no");
 
 exports.sequenceNos = async () => {
     try {

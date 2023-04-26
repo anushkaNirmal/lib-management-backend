@@ -19,6 +19,11 @@
     "mongoose": "^7.0.3"
   },
   "devDependencies": {
+    "module-alias": "^2.2.2",
     "nodemon": "^2.0.22"
+  },
+  "_moduleAliases": {
+    "@root"      : ".",
+    "@src"      : "src"
   }
 }

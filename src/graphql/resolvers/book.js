@@ -1,12 +1,12 @@
 //resolvers
-const sequenceResolvers = require("../resolvers/sequence_no");
+const sequenceResolvers = require("@src/graphql/resolvers/sequence_no");
 
 //servies
-const bookService = require("../../services/book");
-const sequenceService = require("../../services/sequence_no");
+const bookService = require("@src/services/book");
+const sequenceService = require("@src/services/sequence_no");
 
 //helpers
-const { getUniqueIdForBook } = require("../../helpers/books/getUniqueId");
+const { getUniqueIdForBook } = require("@src/helpers/books/getUniqueId");
 
 exports.books = async () => {
     try {

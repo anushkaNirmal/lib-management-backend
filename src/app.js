@@ -1,3 +1,4 @@
+require('module-alias/register')
 const express = require("express");
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
@@ -10,8 +11,8 @@ const http = require("http");
 const mongoose = require("mongoose");
 
 //rootvalues
-const resolvers = require("./grapgql/resolvers/index");
-const typeDefs = require("./grapgql/schema/index");
+const resolvers = require("@src/graphql/resolvers/index");
+const typeDefs = require("@src/graphql/schema/index");
 
 const DB_USERNAME = process.env.MONGO_USER;
 const DB_PASSWORD = process.env.MONGO_PASSWORD;
@@ -27,7 +28,7 @@ mongoose
         }
     )
     .then(() => console.log("MongoDB connected"))
-    .catch((err) => console.log("Failed to connect to MongoDB"));
+    .catch((err) => console.log("Failed to connect to MongoDB" , err));
 
 const app = express();
 const httpServer = http.createServer(app);
