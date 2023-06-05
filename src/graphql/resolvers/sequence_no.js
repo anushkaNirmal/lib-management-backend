@@ -1,71 +1,51 @@
-const sequenceNoService = require("@src/services/sequence_no");
+const sequenceNoControlers = require("@src/controlers/sequence_no");
 
 exports.sequenceNos = async () => {
     try {
-        const results = await sequenceNoService.getAll();
-        return results.map((result) => ({
-            ...result._doc,
-            _id: result.id,
-        }));
+        const results = await sequenceNoControlers.getAll();
+        return results;
     } catch (error) {
         console.log("get all sequence no error : ", error);
-        throw new Error(error);
+        throw new Error(error.message);
     }
 };
 
 exports.getSequenceNoById = async (parent, args) => {
     try {
-        const result = await sequenceNoService.getById(args.id);
-        return result === null
-            ? result
-            : {
-                  ...result._doc,
-                  _id: result.id,
-              };
+        const result = await sequenceNoControlers.getById(args.id);
+        return result;
     } catch (error) {
         console.log("get sequence no by id error : ", error);
-        throw new Error(error);
+        throw new Error(error.message);
     }
 };
 
 exports.getSequenceNoByYear = async (parent, args) => {
     try {
-        const result = await sequenceNoService.getByYear(args.year);
-        return result === null
-            ? result
-            : {
-                  ...result._doc,
-                  _id: result.id,
-              };
+        const result = await sequenceNoControlers.getByYear(args.year);
+        return result;
     } catch (error) {
         console.log("get sequence no by year error : ", error);
-        throw new Error(error);
+        throw new Error(error.message);
     }
 };
 
 exports.createSequenceNo = async (parent, args) => {
     try {
-
-        console.log(parent , "parent")
-        //before create check if there is already a sequence number for given the given year
-        const existingSequenceNo = await sequenceNoService.getByYear(args.sequenceInput.year);
-        if (existingSequenceNo) {
-            throw new Error(`Sequence number already exists for year ${args.sequenceInput.year}`);
-        }
-        const result = await sequenceNoService.create(args);
-        return { ...result._doc, _id: result.id };
+        const result = await sequenceNoControlers.create(args.sequenceInput);
+        return result;
     } catch (error) {
-        console.log("create sequence no : ", error);
-        throw new Error(error);
+        console.log("create sequence no error : ==============", error);
+        throw new Error(error.message);
     }
 };
 
 exports.updateSequenceNo = async (parent, args) => {
     try {
-        const result = await sequenceNoService.findByIdAndUpdate({id:args.id , ...args.sequenceInput});
-        return { ...result._doc, _id: result.id };
+        const result = await sequenceNoControlers.findByIdAndUpdate({id:args.id , ...args.sequenceInput});
+        return result;
     } catch (error) {
-        console.log("update sequence no : ", error);
-        throw new Error(error);
+        console.log("update sequence no error : ", error);
+        throw new Error(error.message);
     }
 };

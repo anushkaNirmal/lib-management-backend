@@ -30,11 +30,11 @@ exports.getByYear = async (year) => {
     }
 };
 
-exports.create = async (args) => {
+exports.create = async (sequenceInput) => {
     try {
         const sequence_no = new SequenceNo({
-            year: args.sequenceInput.year,
-            sequenceNo: args.sequenceInput.sequenceNo,
+            year: sequenceInput.year,
+            sequenceNo: sequenceInput.sequenceNo,
         });
         const result = await sequence_no.save();
         return result;
