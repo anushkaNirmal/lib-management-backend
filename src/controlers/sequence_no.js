@@ -78,3 +78,14 @@ exports.findByIdAndUpdate = async (sequenceInput) => {
     }
 };
 
+exports.findOneAndUpdate = async (conditions, update, options) => {
+    try {
+        const result = await sequenceNoService.findOneAndUpdate(conditions, update, options);
+        console.log(result , "result")
+        return { ...result._doc, _id: result.id };
+    } catch (error) {
+        console.log("findOneAndUpdate sequence no controler error : ", error);
+        throw new Error(error.message);
+    }
+};
+

@@ -6,7 +6,7 @@ exports.getAll = async () => {
         return sequenceNos;
     } catch (error) {
         console.log("get all sequence no service error : ", error);
-        throw new Error(error);
+        throw new Error(error.message);
     }
 };
 
@@ -16,7 +16,7 @@ exports.getById = async (id) => {
         return sequenceNo;
     } catch (error) {
         console.log("get sequence no by id service error : ", error);
-        throw new Error(error);
+        throw new Error(error.message);
     }
 };
 
@@ -26,7 +26,7 @@ exports.getByYear = async (year) => {
         return sequenceNos;
     } catch (error) {
         console.log("get sequence no by year service error : ", error);
-        throw new Error(error);
+        throw new Error(error.message);
     }
 };
 
@@ -40,7 +40,7 @@ exports.create = async (sequenceInput) => {
         return result;
     } catch (error) {
         console.log("create sequence no service error : ", error);
-        throw new Error(error);
+        throw new Error(error.message);
     }
 };
 
@@ -54,7 +54,7 @@ exports.findByIdAndUpdate = async ({ id, ...rest }) => {
         return result;
     } catch (error) {
         console.log("update sequence no service error : ", error);
-        throw new Error(error);
+        throw new Error(error.message);
     }
 };
 
@@ -65,9 +65,10 @@ exports.findOneAndUpdate = async (conditions, update, options) => {
             { ...update },
             { ...options }
         );
+        console.log(result,"result")
         return result;
     } catch (error) {
         console.log("find one and update sequence no service error : ", error);
-        throw new Error(error);
+        throw new Error(error.message);
     }
 };

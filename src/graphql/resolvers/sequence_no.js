@@ -49,3 +49,4 @@ exports.updateSequenceNo = async (parent, args) => {
         throw new Error(error.message);
     }
 };
+
