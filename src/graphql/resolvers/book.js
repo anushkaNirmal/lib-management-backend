@@ -1,9 +1,6 @@
 //controlers
 const bookControler = require("@src/controlers/book");
 
-//helpers
-const { getUniqueIdForBook } = require("@src/helpers/books/getUniqueId");
-
 exports.books = async () => {
     try {
         const results = await bookControler.getAll();
@@ -14,7 +11,7 @@ exports.books = async () => {
     }
 };
 
-exports.createBook = async (parent, args, context) => {
+exports.createBook = async (parent, args) => {
     try {
         const result = await bookControler.create(args);
         return result

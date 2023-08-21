@@ -3,7 +3,6 @@ const sequenceNoControlers = require("@src/controlers/sequence_no");
 
 //servies
 const bookService = require("@src/services/book");
-const sequenceService = require("@src/services/sequence_no");
 
 //helpers
 const { getUniqueIdForBook } = require("@src/helpers/books/getUniqueId");
